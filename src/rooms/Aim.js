@@ -1,9 +1,7 @@
-import Button from '@material-ui/core/Button';
-import LinearProgress from '@material-ui/core/LinearProgress';
 import React, { Component } from 'react';
 import Knob from 'react-canvas-knob';
 
-import { get_state, set_actions } from '../network';
+import { set_actions } from '../network';
 
 class Energy extends Component {
   constructor(props) {
