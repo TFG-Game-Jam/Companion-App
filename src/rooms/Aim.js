@@ -9,19 +9,13 @@ class Energy extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scene: 'Welcome',
+      value: 50,
     };
   }
 
-  componentDidMount() {
-    this.intervalId = setInterval(this.timer, 700);
-  }
-
-  componentWillUnmount(){
-    clearInterval(this.intervalId);
-  }
-
-  timer = () => get_state(state => this.setState({ energy: state.energy }));
+  handleChange = (newValue) => {
+    this.setState({value: newValue});
+  };
 
   render = () => {
     const set = (key) => () => set_actions({[key]: true});
@@ -30,8 +24,8 @@ class Energy extends Component {
       <div style={{padding: '50px'}}>
         <h2>Aiming</h2>
         <Knob
-          value={50}
-          //   onChange={this.handleChange}
+          value={this.state.value}
+          onChange={this.handleChange}
         />
       </div>
     );

@@ -49,11 +49,11 @@ class App extends Component {
       <div className='App'>
         <div>
           <header className='App-header'>
-            <Button style={{fontFamily: "'VT323', monospace", fontSize: '64px', color: 'white', width: '50%'}}
+            <Button style={{fontFamily: "'VT323', monospace", fontSize: '40px', color: 'white', width: '50%'}}
                 onClick={() => this.setState(state => ({ ...state, currentRoom: (state.currentRoom + rooms.length - 1) % rooms.length}))}>
               &lt;
             </Button>
-            <Button style={{fontFamily: "'VT323', monospace", fontSize: '64px', color: 'white', width: '50%'}}
+            <Button style={{fontFamily: "'VT323', monospace", fontSize: '40px', color: 'white', width: '50%'}}
                 onClick={() => this.setState(state => ({ ...state, currentRoom: (state.currentRoom + 1) % rooms.length}))}>
               &gt;
             </Button>

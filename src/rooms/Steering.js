@@ -11,8 +11,9 @@ class Steering extends Component {
     const clear_starboard = () => set_actions({'starboard': false});
     return (
       <div style={{padding: '50px'}}>
-        <h2>Steering</h2>
+        <h2>Engines</h2>
         <Button style={{fontFamily: "'VT323', monospace", fontSize: '40px', height: '300px', width: '50%'}}
+            variant='contained'
             onMouseDown={set_port}
             onMouseUp={clear_port}
             onMouseLeave={clear_port}
@@ -21,6 +22,7 @@ class Steering extends Component {
           Port
         </Button>
         <Button style={{fontFamily: "'VT323', monospace", fontSize: '40px', height: '300px', width: '50%'}}
+            variant='contained'
             onMouseDown={set_starboard}
             onMouseUp={clear_starboard}
             onMouseLeave={clear_starboard}
