@@ -6,10 +6,10 @@ import './App.css';
 
 import WaitingRoom from './WaitingRoom';
 import Welcome from './Welcome';
-import Move from './rooms/Move';
+import Steering from './rooms/Steering';
 
 const rooms = [
-  <Move />,
+  <Steering />,
 ];
 let currentRoom = 0;
 

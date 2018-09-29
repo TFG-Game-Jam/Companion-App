@@ -4,6 +4,8 @@ function route(s) {
 
 async function fetch_json(address, params={}) {
   var url = new URL(address);
+  console.log(params);
+  console.log(url);
   Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
   return fetch(url)
     .then(response => {
@@ -15,8 +17,8 @@ async function fetch_json(address, params={}) {
     })
 }
 
-export async function set_state(params) {
-  return fetch_json(route('set-state', params));
+export async function set_actions(params) {
+  return fetch_json(route('set-actions'), params);
 }
 
 export async function join_game() {
