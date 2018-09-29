@@ -14,12 +14,11 @@ class Energy extends Component {
   }
 
   handleChange = (newValue) => {
+    set_actions({ aimAngle: 3.6 * newValue});
     this.setState({value: newValue});
   };
 
   render = () => {
-    const set = (key) => () => set_actions({[key]: true});
-    const clear = (key) => () => set_actions({[key]: false});
     return (
       <div style={{padding: '50px'}}>
         <h2>Aiming</h2>
