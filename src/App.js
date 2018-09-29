@@ -6,18 +6,24 @@ import './App.css';
 
 import WaitingRoom from './WaitingRoom';
 import Welcome from './Welcome';
+import Aim from './rooms/Aim';
+import LoadWeapon from './rooms/LoadWeapon';
+import Energy from './rooms/Energy';
 import Steering from './rooms/Steering';
 
 const rooms = [
   <Steering />,
+  <LoadWeapon />,
+  <Energy />,
+  <Aim />,
 ];
-let currentRoom = 0;
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scene: 'Welcome'
+      scene: 'Welcome',
+      currentRoom: 0,
     };
   }
 
@@ -43,15 +49,17 @@ class App extends Component {
       <div className='App'>
         <div>
           <header className='App-header'>
-            <Button style={{fontFamily: "'VT323', monospace", fontSize: '64px', color: 'white', width: '50%'}}>
+            <Button style={{fontFamily: "'VT323', monospace", fontSize: '64px', color: 'white', width: '50%'}}
+                onClick={() => this.setState(state => ({ ...state, currentRoom: (state.currentRoom + rooms.length - 1) % rooms.length}))}>
               &lt;
             </Button>
-            <Button style={{fontFamily: "'VT323', monospace", fontSize: '64px', color: 'white', width: '50%'}}>
+            <Button style={{fontFamily: "'VT323', monospace", fontSize: '64px', color: 'white', width: '50%'}}
+                onClick={() => this.setState(state => ({ ...state, currentRoom: (state.currentRoom + 1) % rooms.length}))}>
               &gt;
             </Button>
           </header>
         </div>
-        {rooms[currentRoom % rooms.length]}
+        {rooms[this.state.currentRoom]}
       </div>
     )
   }
